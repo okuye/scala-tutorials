@@ -170,7 +170,8 @@ lazy val scala_lang_2 = (project in file("scala-lang-modules/scala-lang-2"))
       Seq(jUnitInterface) ++ scalaTestDeps
   )
 
-val scalaParColDep = "org.scala-lang.modules" %% "scala-parallel-collections" % "1.0.4"
+val scalaParColDep =
+  "org.scala-lang.modules" %% "scala-parallel-collections" % "1.0.4"
 
 lazy val scala_core_collections =
   (project in file("scala-core-collections-modules/scala-core-collections"))
@@ -225,11 +226,13 @@ lazy val scala_test_2 = (project in file("scala-test-2"))
 val embeddedMongo =
   "de.flapdoodle.embed" % "de.flapdoodle.embed.mongo" % embedMongoVersion
 
-val akkaTypedTestkit = "com.typesafe.akka" %% "akka-actor-testkit-typed" % AkkaVersion % "it,test"
+val akkaTypedTestkit =
+  "com.typesafe.akka" %% "akka-actor-testkit-typed" % AkkaVersion % "it,test"
 val akkaStreamDep = "com.typesafe.akka" %% "akka-stream" % AkkaVersion
 val akkaHttpDep = "com.typesafe.akka" %% "akka-http" % AkkaHttpVersion
 val akkaActorTyped = "com.typesafe.akka" %% "akka-actor-typed" % AkkaVersion
-val akkaHttpTestkitDep = "com.typesafe.akka" %% "akka-http-testkit" % AkkaHttpVersion
+val akkaHttpTestkitDep =
+  "com.typesafe.akka" %% "akka-http-testkit" % AkkaHttpVersion
 
 lazy val scala_akka_dependencies: Seq[ModuleID] = Seq(
   akkaActorTyped,
@@ -384,7 +387,8 @@ val osLibVersion = "0.9.3"
 
 val osLibDep = "com.lihaoyi" %% "os-lib" % osLibVersion
 
-val log4jApiScalaDep = "org.apache.logging.log4j" %% "log4j-api-scala" % "13.1.0"
+val log4jApiScalaDep =
+  "org.apache.logging.log4j" %% "log4j-api-scala" % "13.1.0"
 
 val munitDep = "org.scalameta" %% "munit" % "0.7.29" % Test
 
@@ -514,7 +518,8 @@ lazy val scala_strings = (project in file("scala-strings"))
     libraryDependencies += "org.scalatestplus" %% "scalacheck-1-17" % "3.2.18.0" % Test
   )
 
-val scalaTestPlusMockito = "org.scalatestplus" %% "mockito-5-10" % "3.2.18.0" % Test
+val scalaTestPlusMockito =
+  "org.scalatestplus" %% "mockito-5-10" % "3.2.18.0" % Test
 
 lazy val scala_design_patterns = (project in file("scala-design-patterns"))
   .settings(
@@ -578,7 +583,7 @@ lazy val zio3 = (project in file("zio3"))
   .settings(
     libraryDependencies ++= Seq(
       zioJsonDep,
-      "dev.zio" %% "zio-http" % "3.0.0-RC2",
+      "dev.zio" %% "zio-http" % "3.0.0-RC4",
       "io.getquill" %% "quill-zio" % "4.8.1",
       "io.getquill" %% "quill-jdbc-zio" % "4.8.1",
       "com.h2database" % "h2" % "2.2.220"
@@ -587,7 +592,7 @@ lazy val zio3 = (project in file("zio3"))
       "dev.zio" %% "zio-test" % zioVersion % Test,
       zioTestSbt,
       "dev.zio" %% "zio-test-magnolia" % zioVersion % Test,
-      "dev.zio" %% "zio-http-testkit" % "3.0.0-RC2" % Test
+      "dev.zio" %% "zio-http-testkit" % "3.0.0-RC4" % Test
     ),
     testFrameworks += new TestFramework("zio.test.sbt.ZTestFramework"),
     run / fork := true
