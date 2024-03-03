@@ -170,7 +170,8 @@ lazy val scala_lang_2 = (project in file("scala-lang-modules/scala-lang-2"))
       Seq(jUnitInterface) ++ scalaTestDeps
   )
 
-val scalaParColDep = "org.scala-lang.modules" %% "scala-parallel-collections" % "1.0.4"
+val scalaParColDep =
+  "org.scala-lang.modules" %% "scala-parallel-collections" % "1.0.4"
 
 lazy val scala_core_collections =
   (project in file("scala-core-collections-modules/scala-core-collections"))
@@ -225,18 +226,20 @@ lazy val scala_test_2 = (project in file("scala-test-2"))
 val embeddedMongo =
   "de.flapdoodle.embed" % "de.flapdoodle.embed.mongo" % embedMongoVersion
 
-val akkaTypedTestkit = "com.typesafe.akka" %% "akka-actor-testkit-typed" % AkkaVersion % "it,test"
+val akkaTypedTestkit =
+  "com.typesafe.akka" %% "akka-actor-testkit-typed" % AkkaVersion % "it,test"
 val akkaStreamDep = "com.typesafe.akka" %% "akka-stream" % AkkaVersion
 val akkaHttpDep = "com.typesafe.akka" %% "akka-http" % AkkaHttpVersion
 val akkaActorTyped = "com.typesafe.akka" %% "akka-actor-typed" % AkkaVersion
-val akkaHttpTestkitDep = "com.typesafe.akka" %% "akka-http-testkit" % AkkaHttpVersion
+val akkaHttpTestkitDep =
+  "com.typesafe.akka" %% "akka-http-testkit" % AkkaHttpVersion
 
 lazy val scala_akka_dependencies: Seq[ModuleID] = Seq(
   akkaActorTyped,
   akkaTypedTestkit,
   "com.lightbend.akka" %% "akka-stream-alpakka-mongodb" % "5.0.0",
   akkaStreamDep,
-  "org.mongodb.scala" %% "mongo-scala-driver" % "4.11.1",
+  "org.mongodb.scala" %% "mongo-scala-driver" % "5.0.0",
   "com.lightbend.akka" %% "akka-stream-alpakka-file" % "5.0.0",
   jUnitInterface,
   embeddedMongo % Test,
@@ -384,7 +387,8 @@ val osLibVersion = "0.9.3"
 
 val osLibDep = "com.lihaoyi" %% "os-lib" % osLibVersion
 
-val log4jApiScalaDep = "org.apache.logging.log4j" %% "log4j-api-scala" % "13.1.0"
+val log4jApiScalaDep =
+  "org.apache.logging.log4j" %% "log4j-api-scala" % "13.1.0"
 
 val munitDep = "org.scalameta" %% "munit" % "0.7.29" % Test
 
@@ -514,7 +518,8 @@ lazy val scala_strings = (project in file("scala-strings"))
     libraryDependencies += "org.scalatestplus" %% "scalacheck-1-17" % "3.2.18.0" % Test
   )
 
-val scalaTestPlusMockito = "org.scalatestplus" %% "mockito-5-10" % "3.2.18.0" % Test
+val scalaTestPlusMockito =
+  "org.scalatestplus" %% "mockito-5-10" % "3.2.18.0" % Test
 
 lazy val scala_design_patterns = (project in file("scala-design-patterns"))
   .settings(
